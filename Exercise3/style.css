@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 550px;
+  padding: 15px;
+  margin: calc(50vh - 205px) auto;
+  border: 1px solid rgb(231, 231, 231);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  float: left;
+
+  background-color: #eee;
+  width: 228px;
+  height: 312px;
+  padding: 20px;
+
+  text-align: center;
+  line-height: 320px;
+
+}
+
+.name {
+  color: white;
+  background-color: #03a9f4;
+  height: 2.8em;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  line-height: 46px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 2.5em;
+  background-color: #ddd;
+  width: 188px;
+  height: 188px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 188px;
+}
+
+.separator {
+  float: left;
+
+  background-color: #03a9f4;
+  width: 1px;
+  height: 312px;
+  margin: 0px 30px;
+
+  position: relative;
+}
+
+.separator::before {     /* or circle */
+  content: "Or";
+
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  border-radius: 50%;
+  color: white;
+  background-color: #03a9f4;
+
+  position: absolute;
+  top: calc(50% - 10px);
+  left: -15px;
+}
+
+.clear {
+  clear: both;
+}
