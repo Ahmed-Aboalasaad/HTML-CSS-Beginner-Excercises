@@ -98,3 +98,17 @@
 .two:hover::after {
   animation-play-state: running;
 }
+
+/* ----------------------------------------*/
+
+span {
+  background-color: #eaeaf7;
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 50px auto;
+  border: 5px solid black;
+  border-left-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
