@@ -1,0 +1,100 @@
+.one {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fa3664;
+  border-left-color: transparent;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+
+  animation: spin 1s infinite linear;
+}
+
+.one:hover {
+  animation-play-state: paused;
+}
+
+.one::before {
+  content: "";
+  width: 130%;
+  height: 130%;
+  border: 5px solid #2490f5;
+  border-right-color: transparent;
+  border-radius: 50%;
+
+  position: absolute;
+  left: -25%;
+  top: -25%;
+}
+
+.one::after {
+  content: "";
+  width: 161%;
+  height: 161%;
+  border: 5px solid #fcae00;
+  border-top-color: transparent;
+  border-radius: 50%;
+
+  position: absolute;
+  left: -40%;
+  top: -40%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* ------------------------------------ */
+
+.two {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #2490f5;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  animation: spin 1s linear infinite;
+  animation-play-state: paused;
+}
+
+.two::before {
+  content: "";
+  width: 130%;
+  height: 130%;
+  border: 5px solid #fcae00;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+
+  position: absolute;
+  left: -25%;
+  top: -25%;
+
+  animation: spin 10s linear reverse infinite;
+  animation-play-state: paused;
+}
+
+.two::after {
+  content: "";
+  width: 161%;
+  height: 161%;
+  border: 5px solid black;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+
+  position: absolute;
+  left: -40.5%;
+  top: -40.5%;
+
+  animation: spin 5s linear reverse infinite;
+  animation-play-state: paused;
+}
+
+.two:hover,
+.two:hover::before,
+.two:hover::after {
+  animation-play-state: running;
+}
