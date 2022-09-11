@@ -112,3 +112,161 @@ span {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
+
+/* -------------------------------------------*/
+
+.letters {
+  padding: 10px;
+  border: 1px solid #dfdfdf;
+  margin: 50px auto;
+  width: 420px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+#e {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-template-rows: repeat(7, 50px);
+  grid-template-areas:
+    "side up   up   up"
+    "side .    .    . "
+    "side .    .    . "
+    "side mid  mid  mid"
+    "side .    .    . "
+    "side .    .    . "
+    "side down down down";
+}
+
+#l {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-template-rows: repeat(7, 50px);
+  grid-template-areas:
+    "side .    .    ."
+    "side .    .    ."
+    "side .    .    ."
+    "side .    .    ."
+    "side .    .    ."
+    "side .    .    ."
+    "side down down down"
+}
+
+#e div,
+#l div {
+  background-color: #323234;
+}
+
+.up {
+  grid-area: up;
+}
+
+.mid {
+  grid-area: mid;
+}
+
+.down {
+  grid-area: down;
+}
+
+.side {
+  grid-area: side;
+}
+
+@keyframes e-round {
+  10% {
+    top: 17.5px;
+    left: 17.5px;
+  }
+  20% {
+    top: 167.5px;
+    left: 17.5px;
+  }
+  30% {
+    top: 167.5px;
+    left: 167.5px;
+  }
+  40% {
+    top: 167.5px;
+    left: 17.5px;
+  }
+  50% {
+    top: 317.5px;
+    left: 17.5px;
+  }
+  60% {
+    top: 317.5px;
+    left: 167.5px;
+  }
+  70% {
+    top: 317.5px;
+    left: 17.5px;
+  }
+  80% {
+    top: 17.5px;
+    left: 17.5px;
+  }
+  90% {
+    top: 17.5px;
+    left: 167.5px;
+  }
+  100% {
+
+  }
+}
+
+/* @keyframes e-loop {
+  to {
+    animation: e-round 5s 5s infinite;
+  }
+} */
+
+.letters::before {
+  content: "";
+  width: 35px;
+  height: 35px;
+  background-color: #fea604;
+  position: absolute;
+  top: 17.5px;
+  left: 167.5px;
+  animation: e-round 10s 5s infinite;
+}
+
+@keyframes l-round {
+  25% {
+    right: 167.5px;
+    bottom: 17.5px;
+    opacity: 1;
+  }
+  50% {
+    right: 167.5px;
+    bottom: 317.5px;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+    right: 17.5px;
+    bottom: 17.5px;
+  }
+}
+
+/* @keyframes l-loop {
+  to {
+    animation: l-round 5s 5s infinite;
+  }
+} */
+
+.letters::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  background-color: #fea604;
+  opacity: 0;
+  position: absolute;
+  bottom: 17.5px;
+  right: 17.5px;
+  animation: l-round 5s 10s infinite;
+}
