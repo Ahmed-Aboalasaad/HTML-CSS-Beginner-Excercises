@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 95vw;
+  height: 95vh;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 480px;
+  height: 330px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.container::before {
+  content: "A+";
+  background-color: #3b74ba;
+  color: white;
+  width: 40px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -16px;
+  right: 15px;
+}
+
+.container::after {
+  content: "";
+  background-image: url(person-blue-shirt.png);
+  width: 125px;
+  height: 135px;
+  position: absolute;
+  top: -109px;
+  left: 182px;
+}
+
+h1 {
+  color: #3b74bc;
+  text-align: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+p {
+  color: #98a1ba;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+hr {
+  margin-bottom: 18px;
+}
+
+.social {
+  background-color: #f6f6f6;
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Animation */
+
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fly {
+  to {
+    transform: rotateY(3turn) translateY(-1000px);
+  }
+}
+
+.container::after {
+  animation: disappear 3s 3s 1 forwards;
+}
+
+.container {
+  transform-style: preserve-3d;
+  animation: fly 5s 6s 1 forwards;
+}
