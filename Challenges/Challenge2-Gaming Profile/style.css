@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px 30px;
+  margin: 0;
+  background-color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+  /* this awkward styling is to avoid the inset border 
+  style that chrome gives to the <hr> elements */
+  border: 0;
+  border-top: 1px solid #ddd;
+  height: 1px;
+}
+
+.main {
+  background-color: white;
+  height: 310px;
+  display: flex;
+}
+
+.left {
+  width: 300px;
+  height: 100%;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left img {
+  width: 190px;
+  border: 5px solid #ddd;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.level {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 90%;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 5px;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: "";
+  width: 75%;
+  height: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #009688;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.next-level-after {
+  font-size: 15px;
+  color: #7f789c;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+.next-level-after span {
+  color: #009688;
+  font-weight: bold;
+}
+
+.right {
+  width: calc(100% - 250px);
+  position: relative;
+}
+
+.right::before {
+  content: "150 Days in The Journey";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.right h1,
+.right p {
+  margin: 20px;
+}
+
+.right p,
+.right::before {
+  color: #7f789c;
+}
+
+/* ---------------------------------- */
+
+.points-log,
+.trophies,
+.ladder-news,
+.your-powers {
+  background-color: white;
+  color: #7f789c;
+  padding: 20px;
+}
+
+.title {
+  width: fit-content;
+  background-color: #607d8b;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.points-log span:nth-child(1) {
+  color: #009688;
+  font-weight: bold;
+}
+
+.points-log span:nth-child(2) {
+  color: #ea3871;
+  font-weight: bold;
+}
+
+/* ------------------------------------ */
+
+.trophies-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.trophies-container div img {
+  width: 100%;
+}
+
+/* ----------------------------------------- */
+
+.ladder-news {
+  font-size: 20px;
+}
+
+.ladder-news .title {
+  margin-bottom: 20px;
+}
+
+.ladder-news span:nth-child(1),
+.red-bold {
+  color: #ea3871;
+  font-weight: 800;
+}
+
+.ladder-news span:nth-child(2),
+.green-bold {
+  color: #0c8000;
+  font-weight: 800;
+}
+
+/* --------------------------- */
+
+.your-powers {
+  font-size: 20px;
+  color: gray;
+}
+
+.your-powers .title {
+  margin-bottom: 10px;
+}
+
+.your-powers > div {
+  display: flex;
+  justify-content: space-between;
+}
