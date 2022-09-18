@@ -1,3 +1,9 @@
+/* --------------general styling----------------- */
+html {
+  /* make the scroll to top transition smooth */
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,15 +15,49 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Leave space for the scroll to top button */
+body > div,
+body > hr {
+  width: calc(100% - 60px);
+  border-radius: 10px;
+}
+
+/* avoid chrome awkwardness */
 hr {
   /* this awkward styling is to avoid the inset border 
   style that chrome gives to the <hr> elements */
   border: 0;
   border-top: 1px solid #ddd;
   height: 1px;
+  margin-right: 0;
+  margin-left: 0;
 }
 
-.main {
+/* -----------------scroll to top button-------------- */
+
+#scroll-to-top {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#scroll-to-top i {
+  color: white;
+  font-size: 52px;
+}
+
+/* -------------first section (the main one)------------- */
+
+#main {
   background-color: white;
   height: 310px;
   display: flex;
@@ -35,6 +75,7 @@ hr {
 
 .left img {
   width: 190px;
+  height: 200px;
   border: 5px solid #ddd;
   border-radius: 50%;
   margin: 10px;
@@ -101,37 +142,38 @@ hr {
   color: #7f789c;
 }
 
-/* ---------------------------------- */
+/* -------------points log section-------------- */
 
-.points-log,
-.trophies,
-.ladder-news,
-.your-powers {
+#points-log,
+#trophies,
+#ladder-news,
+#your-powers {
   background-color: white;
   color: #7f789c;
   padding: 20px;
 }
 
 .title {
-  width: fit-content;
   background-color: #607d8b;
   color: white;
   padding: 10px;
+  border-radius: 10px;
+  width: fit-content;
   font-weight: bold;
   font-size: 25px;
 }
 
-.points-log span:nth-child(1) {
+#points-log span:nth-child(1) {
   color: #009688;
   font-weight: bold;
 }
 
-.points-log span:nth-child(2) {
+#points-log span:nth-child(2) {
   color: #ea3871;
   font-weight: bold;
 }
 
-/* ------------------------------------ */
+/* -----------------trophies section-------------- */
 
 .trophies-container {
   margin-top: 20px;
@@ -142,42 +184,43 @@ hr {
 
 .trophies-container div img {
   width: 100%;
+  border-radius: 10px;
 }
 
-/* ----------------------------------------- */
+/* -----------------ladder news section------------------ */
 
-.ladder-news {
+#ladder-news {
   font-size: 20px;
 }
 
-.ladder-news .title {
+#ladder-news .title {
   margin-bottom: 20px;
 }
 
-.ladder-news span:nth-child(1),
+#ladder-news span:nth-child(1),
 .red-bold {
   color: #ea3871;
   font-weight: 800;
 }
 
-.ladder-news span:nth-child(2),
+#ladder-news span:nth-child(2),
 .green-bold {
   color: #0c8000;
   font-weight: 800;
 }
 
-/* --------------------------- */
+/* ----------your powers section------------- */
 
-.your-powers {
+#your-powers {
   font-size: 20px;
   color: gray;
 }
 
-.your-powers .title {
+#your-powers .title {
   margin-bottom: 10px;
 }
 
-.your-powers > div {
+#your-powers > div {
   display: flex;
   justify-content: space-between;
 }
